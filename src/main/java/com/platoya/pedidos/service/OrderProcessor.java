@@ -3,12 +3,12 @@ package com.platoya.pedidos.service;
 import com.platoya.pedidos.controller.OrderRequestDto;
 import com.platoya.pedidos.model.Order;
 import com.platoya.pedidos.model.OrderItem;
+import com.platoya.pedidos.model.PriceBreakdown;
 import com.platoya.pedidos.model.Product;
-import com.platoya.pedidos.notification.EmailSender;
-import com.platoya.pedidos.notification.WhatsAppService;
+import com.platoya.pedidos.notification.OrderNotifier;
+import com.platoya.pedidos.pricing.OrderPricingService;
 import com.platoya.pedidos.repository.OrderRepository;
 import com.platoya.pedidos.repository.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -16,120 +16,53 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @Service
 public class OrderProcessor {
 
-    @Autowired
-    private OrderRepository orderRepo;
+    private final OrderRepository orderRepository;
+    private final ProductRepository productRepository;
+    private final OrderPricingService pricingService;
+    private final OrderNotifier notifier;
 
-    @Autowired
-    private ProductRepository prodRepo;
+    public OrderProcessor(OrderRepository orderRepository, ProductRepository productRepository,
+                          OrderPricingService pricingService, OrderNotifier notifier) {
+        this.orderRepository = orderRepository;
+        this.productRepository = productRepository;
+        this.pricingService = pricingService;
+        this.notifier = notifier;
+    }
 
     public Order processOrder(String customerName, String customerEmail, String customerPhone,
                               String customerType, String street, String city, String zipCode,
                               List<OrderRequestDto.ItemDto> items) {
-        // validaciones
-        if (customerName == null || customerName.trim().isEmpty()) {
-            throw new RuntimeException("El nombre del cliente es obligatorio");
-        }
-        if (customerEmail == null || customerEmail.trim().isEmpty() || !customerEmail.contains("@")) {
-            throw new RuntimeException("El email del cliente es invalido");
-        }
-        if (street == null || street.trim().isEmpty() || city == null || city.trim().isEmpty()) {
-            throw new RuntimeException("La direccion de entrega es obligatoria");
-        }
-        if (items == null || items.isEmpty()) {
-            throw new RuntimeException("El pedido no tiene items");
-        }
+        validateRequest(customerName, customerEmail, street, city, items);
+        List<OrderItem> orderItems = reserveItems(items);
+        PriceBreakdown price = pricingService.price(orderItems, customerType);
 
-        Order o = new Order();
-        o.setCustomerName(customerName);
-        o.setCustomerEmail(customerEmail);
-        o.setCustomerPhone(customerPhone);
-        o.setCustomerType(customerType);
-        o.setStreet(street);
-        o.setCity(city);
-        o.setZipCode(zipCode);
-
-        // recorrer items, validar stock y calcular
-        double subtotal = 0;
-        List<OrderItem> lista = new ArrayList<>();
-        for (OrderRequestDto.ItemDto it : items) {
-            if (it == null || it.getProductId() == null) {
-                throw new RuntimeException("Item invalido");
-            }
-            if (it.getQuantity() <= 0) {
-                throw new RuntimeException("La cantidad debe ser mayor a cero");
-            }
-            Optional<Product> op = prodRepo.findById(it.getProductId());
-            if (!op.isPresent()) {
-                throw new RuntimeException("Producto inexistente: " + it.getProductId());
-            }
-            Product p = op.get();
-            if (p.getStock() < it.getQuantity()) {
-                throw new RuntimeException("Stock insuficiente para " + p.getName());
-            }
-            p.setStock(p.getStock() - it.getQuantity());
-            prodRepo.save(p);
-
-            OrderItem oi = new OrderItem();
-            oi.setProductId(p.getId());
-            oi.setProductName(p.getName());
-            oi.setUnitPrice(p.getPrice());
-            oi.setQuantity(it.getQuantity());
-            lista.add(oi);
-            subtotal = subtotal + p.getPrice() * it.getQuantity();
-        }
-        o.setItems(lista);
-
-        // descuentos
-        double d = 0;
-        if (customerType != null && customerType.equals("VIP")) {
-            d = subtotal * 0.10;
-        } else if (customerType != null && customerType.equals("EMPLEADO")) {
-            d = subtotal * 0.20;
-        }
-
-        // impuestos y envio
-        double tmp = subtotal - d;
-        double iva = tmp * 0.21;
-        double envio = 0;
-        if (customerType != null && customerType.equals("VIP")) {
-            envio = 0;
-        } else if (tmp < 20000) {
-            envio = 1500;
-        }
-        double total = tmp + iva + envio;
-        total = Math.round(total * 100.0) / 100.0;
-
-        o.setSubtotal(subtotal);
-        o.setDiscount(d);
-        o.setTax(iva);
-        o.setShippingCost(envio);
-        o.setTotal(total);
-        o.setStatus("CONFIRMADO");
-        o.setCreatedAt(LocalDateTime.now());
-        orderRepo.save(o);
-
-        // notificaciones
-        EmailSender email = new EmailSender();
-        email.send(customerEmail, "Pedido confirmado",
-                "Hola " + customerName + ", tu pedido #" + o.getId() + " fue confirmado. Total: $" + total);
-        if (customerPhone != null && !customerPhone.trim().isEmpty()) {
-            WhatsAppService wa = new WhatsAppService();
-            wa.sendMessage(customerPhone, "PlatoYa: tu pedido #" + o.getId() + " fue confirmado. Total: $" + total);
-        }
-        return o;
+        Order order = new Order();
+        order.setCustomerName(customerName);
+        order.setCustomerEmail(customerEmail);
+        order.setCustomerPhone(customerPhone);
+        order.setCustomerType(customerType);
+        order.setStreet(street);
+        order.setCity(city);
+        order.setZipCode(zipCode);
+        order.setItems(orderItems);
+        applyPrice(order, price);
+        order.setStatus("CONFIRMADO");
+        order.setCreatedAt(LocalDateTime.now());
+        orderRepository.save(order);
+        notifier.orderConfirmed(order);
+        return order;
     }
 
     public Order getOrder(Long id) {
-        return orderRepo.findById(id).orElse(null);
+        return orderRepository.findById(id).orElse(null);
     }
 
     public List<Order> listOrders(String status) {
-        List<Order> all = orderRepo.findAll();
+        List<Order> all = orderRepository.findAll();
         if (status == null || status.trim().isEmpty()) {
             return all;
         }
@@ -142,56 +75,35 @@ public class OrderProcessor {
         return res;
     }
 
-    public Order cancelOrder(Long id) {
-        if (id == null) {
-            throw new RuntimeException("Id invalido");
-        }
-        Optional<Order> oo = orderRepo.findById(id);
-        if (!oo.isPresent()) {
-            throw new RuntimeException("Pedido no encontrado: " + id);
-        }
-        Order o = oo.get();
-        if (!o.getStatus().equals("CONFIRMADO")) {
+    public Order cancelOrder(Long orderId) {
+        Order order = findOrderOrThrow(orderId);
+        if (!order.getStatus().equals("CONFIRMADO")) {
             throw new RuntimeException("Solo se pueden cancelar pedidos confirmados");
         }
-        for (OrderItem oi : o.getItems()) {
-            Product p = prodRepo.findById(oi.getProductId()).get();
-            p.setStock(p.getStock() + oi.getQuantity());
-            prodRepo.save(p);
+        for (OrderItem item : order.getItems()) {
+            Product product = productRepository.findById(item.getProductId()).get();
+            product.setStock(product.getStock() + item.getQuantity());
+            productRepository.save(product);
         }
-        o.setStatus("CANCELADO");
-        orderRepo.save(o);
-
-        EmailSender email = new EmailSender();
-        email.send(o.getCustomerEmail(), "Pedido cancelado",
-                "Hola " + o.getCustomerName() + ", tu pedido #" + o.getId() + " fue cancelado.");
-        return o;
+        order.setStatus("CANCELADO");
+        orderRepository.save(order);
+        notifier.orderCancelled(order);
+        return order;
     }
 
-    public Order deliverOrder(Long id) {
-        if (id == null) {
-            throw new RuntimeException("Id invalido");
-        }
-        Optional<Order> oo = orderRepo.findById(id);
-        if (!oo.isPresent()) {
-            throw new RuntimeException("Pedido no encontrado: " + id);
-        }
-        Order o = oo.get();
-        if (!o.getStatus().equals("CONFIRMADO")) {
+    public Order deliverOrder(Long orderId) {
+        Order order = findOrderOrThrow(orderId);
+        if (!order.getStatus().equals("CONFIRMADO")) {
             throw new RuntimeException("Solo se pueden entregar pedidos confirmados");
         }
-        o.setStatus("ENTREGADO");
-        orderRepo.save(o);
-
-        if (o.getCustomerPhone() != null && !o.getCustomerPhone().trim().isEmpty()) {
-            WhatsAppService wa = new WhatsAppService();
-            wa.sendMessage(o.getCustomerPhone(), "PlatoYa: tu pedido #" + o.getId() + " fue entregado. Gracias!");
-        }
-        return o;
+        order.setStatus("ENTREGADO");
+        orderRepository.save(order);
+        notifier.orderDelivered(order);
+        return order;
     }
 
     public Map<String, Object> report() {
-        List<Order> all = orderRepo.findAll();
+        List<Order> all = orderRepository.findAll();
         int c1 = 0;
         int c2 = 0;
         int c3 = 0;
@@ -219,5 +131,73 @@ public class OrderProcessor {
             r.put("ticketPromedio", 0.0);
         }
         return r;
+    }
+
+    private void validateRequest(String customerName, String customerEmail, String street, String city,
+                                 List<OrderRequestDto.ItemDto> items) {
+        if (isBlank(customerName)) {
+            throw new RuntimeException("El nombre del cliente es obligatorio");
+        }
+        if (isBlank(customerEmail) || !customerEmail.contains("@")) {
+            throw new RuntimeException("El email del cliente es invalido");
+        }
+        if (isBlank(street) || isBlank(city)) {
+            throw new RuntimeException("La direccion de entrega es obligatoria");
+        }
+        if (items == null || items.isEmpty()) {
+            throw new RuntimeException("El pedido no tiene items");
+        }
+    }
+
+    private List<OrderItem> reserveItems(List<OrderRequestDto.ItemDto> items) {
+        List<OrderItem> orderItems = new ArrayList<>();
+        for (OrderRequestDto.ItemDto line : items) {
+            Product product = findAvailableProduct(line);
+            product.setStock(product.getStock() - line.getQuantity());
+            productRepository.save(product);
+            orderItems.add(toOrderItem(product, line.getQuantity()));
+        }
+        return orderItems;
+    }
+
+    private Product findAvailableProduct(OrderRequestDto.ItemDto line) {
+        if (line == null || line.getProductId() == null) {
+            throw new RuntimeException("Item invalido");
+        }
+        if (line.getQuantity() <= 0) {
+            throw new RuntimeException("La cantidad debe ser mayor a cero");
+        }
+        Product product = productRepository.findById(line.getProductId())
+                .orElseThrow(() -> new RuntimeException("Producto inexistente: " + line.getProductId()));
+        if (product.getStock() < line.getQuantity()) {
+            throw new RuntimeException("Stock insuficiente para " + product.getName());
+        }
+        return product;
+    }
+
+    private OrderItem toOrderItem(Product product, int quantity) {
+        OrderItem item = new OrderItem();
+        item.setProductId(product.getId());
+        item.setProductName(product.getName());
+        item.setUnitPrice(product.getPrice());
+        item.setQuantity(quantity);
+        return item;
+    }
+
+    private void applyPrice(Order order, PriceBreakdown price) {
+        order.setSubtotal(price.subtotal());
+        order.setDiscount(price.discount());
+        order.setTax(price.tax());
+        order.setShippingCost(price.shippingCost());
+        order.setTotal(price.total());
+    }
+
+    private Order findOrderOrThrow(Long orderId) {
+        return orderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Pedido no encontrado: " + orderId));
+    }
+
+    private static boolean isBlank(String value) {
+        return value == null || value.trim().isEmpty();
     }
 }
