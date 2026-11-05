@@ -9,12 +9,19 @@ import java.util.List;
 @Service
 public class OrderPricingService {
 
+    private final CustomerPricingPolicies pricingPolicies;
+
+    public OrderPricingService(CustomerPricingPolicies pricingPolicies) {
+        this.pricingPolicies = pricingPolicies;
+    }
+
     public PriceBreakdown price(List<OrderItem> items, String customerType) {
+        CustomerPricingPolicy policy = pricingPolicies.forType(customerType);
         double subtotal = calculateSubtotal(items);
-        double discount = calculateDiscount(subtotal, customerType);
+        double discount = policy.discountFor(subtotal);
         double taxableAmount = subtotal - discount;
         double tax = taxableAmount * 0.21;
-        double shippingCost = calculateShipping(taxableAmount, customerType);
+        double shippingCost = calculateShipping(taxableAmount, policy);
         double total = Math.round((taxableAmount + tax + shippingCost) * 100.0) / 100.0;
         return new PriceBreakdown(subtotal, discount, tax, shippingCost, total);
     }
@@ -25,17 +32,8 @@ public class OrderPricingService {
                 .reduce(0, Double::sum);
     }
 
-    private double calculateDiscount(double subtotal, String customerType) {
-        if ("VIP".equals(customerType)) {
-            return subtotal * 0.10;
-        } else if ("EMPLEADO".equals(customerType)) {
-            return subtotal * 0.20;
-        }
-        return 0;
-    }
-
-    private double calculateShipping(double taxableAmount, String customerType) {
-        if ("VIP".equals(customerType) || taxableAmount >= 20000) {
+    private double calculateShipping(double taxableAmount, CustomerPricingPolicy policy) {
+        if (policy.hasFreeShipping() || taxableAmount >= 20000) {
             return 0;
         }
         return 1500;
