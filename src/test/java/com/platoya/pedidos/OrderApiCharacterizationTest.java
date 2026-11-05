@@ -176,13 +176,13 @@ class OrderApiCharacterizationTest {
     }
 
     @Test
-    @DisplayName("C14 - Pedido rechazado por stock: stock de los items previos (comportamiento base)")
+    @DisplayName("C14 - Pedido rechazado por stock no descuenta el stock de ningun item (cambio deliberado D1)")
     void stockDeItemsPreviosEnPedidoRechazado() throws Exception {
         crearPedido("REGULAR", "null", item(1, 1), item(5, 99))
                 .andExpect(status().isBadRequest());
-        // Version base: la hamburguesa queda descontada aunque el pedido fue rechazado (20 -> 19).
+        // D1: la reserva es atomica. En la version base la hamburguesa quedaba descontada (20 -> 19).
         mvc.perform(get("/api/products"))
-                .andExpect(jsonPath("$[0].stock").value(19));
+                .andExpect(jsonPath("$[0].stock").value(20));
     }
 
     // ---------------------------------------------------------------- notificaciones

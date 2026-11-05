@@ -42,6 +42,26 @@ public class Order {
     private String status;
     private LocalDateTime createdAt;
 
+    public void cancel() {
+        requireConfirmed("Solo se pueden cancelar pedidos confirmados");
+        status = "CANCELADO";
+    }
+
+    public void deliver() {
+        requireConfirmed("Solo se pueden entregar pedidos confirmados");
+        status = "ENTREGADO";
+    }
+
+    public boolean isBilled() {
+        return "CONFIRMADO".equals(status) || "ENTREGADO".equals(status);
+    }
+
+    private void requireConfirmed(String message) {
+        if (!"CONFIRMADO".equals(status)) {
+            throw new RuntimeException(message);
+        }
+    }
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

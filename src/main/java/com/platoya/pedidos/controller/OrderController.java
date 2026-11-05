@@ -2,7 +2,8 @@ package com.platoya.pedidos.controller;
 
 import com.platoya.pedidos.model.Order;
 import com.platoya.pedidos.service.OrderProcessor;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.platoya.pedidos.service.OrderReportService;
+import com.platoya.pedidos.service.SalesReport;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,14 +14,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/orders")
 public class OrderController {
 
-    @Autowired
-    private OrderProcessor processor;
+    private final OrderProcessor processor;
+    private final OrderReportService reportService;
+
+    public OrderController(OrderProcessor processor, OrderReportService reportService) {
+        this.processor = processor;
+        this.reportService = reportService;
+    }
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody OrderRequestDto r) {
@@ -62,7 +67,7 @@ public class OrderController {
     }
 
     @GetMapping("/report")
-    public Map<String, Object> report() {
-        return processor.report();
+    public SalesReport report() {
+        return reportService.buildSalesReport();
     }
 }
