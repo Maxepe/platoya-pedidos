@@ -3,6 +3,8 @@ package com.platoya.pedidos.model;
 import com.platoya.pedidos.support.Texts;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -40,7 +42,9 @@ public class Order {
     private double tax;
     private double shippingCost;
     private double total;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
     private LocalDateTime createdAt;
 
     protected Order() {
@@ -62,23 +66,23 @@ public class Order {
         order.tax = price.tax();
         order.shippingCost = price.shippingCost();
         order.total = price.total();
-        order.status = "CONFIRMADO";
+        order.status = OrderStatus.CONFIRMADO;
         order.createdAt = LocalDateTime.now();
         return order;
     }
 
     public void cancel() {
         requireConfirmed("Solo se pueden cancelar pedidos confirmados");
-        status = "CANCELADO";
+        status = OrderStatus.CANCELADO;
     }
 
     public void deliver() {
         requireConfirmed("Solo se pueden entregar pedidos confirmados");
-        status = "ENTREGADO";
+        status = OrderStatus.ENTREGADO;
     }
 
     public boolean isBilled() {
-        return "CONFIRMADO".equals(status) || "ENTREGADO".equals(status);
+        return status == OrderStatus.CONFIRMADO || status == OrderStatus.ENTREGADO;
     }
 
     public boolean hasCustomerPhone() {
@@ -86,7 +90,7 @@ public class Order {
     }
 
     private void requireConfirmed(String message) {
-        if (!"CONFIRMADO".equals(status)) {
+        if (status != OrderStatus.CONFIRMADO) {
             throw new RuntimeException(message);
         }
     }
@@ -105,6 +109,6 @@ public class Order {
     public double getTax() { return tax; }
     public double getShippingCost() { return shippingCost; }
     public double getTotal() { return total; }
-    public String getStatus() { return status; }
+    public OrderStatus getStatus() { return status; }
     public LocalDateTime getCreatedAt() { return createdAt; }
 }

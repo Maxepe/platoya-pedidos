@@ -2,6 +2,7 @@ package com.platoya.pedidos.service;
 
 import com.platoya.pedidos.model.Order;
 import com.platoya.pedidos.model.OrderItem;
+import com.platoya.pedidos.model.OrderStatus;
 import com.platoya.pedidos.model.PriceBreakdown;
 import com.platoya.pedidos.notification.OrderNotifier;
 import com.platoya.pedidos.pricing.OrderPricingService;
@@ -10,7 +11,6 @@ import com.platoya.pedidos.support.Texts;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /** Coordina el ciclo de vida del pedido. Delega stock, precios y avisos en componentes dedicados. */
@@ -47,17 +47,13 @@ public class OrderProcessor {
 
     @Transactional(readOnly = true)
     public List<Order> listOrders(String status) {
-        List<Order> all = orderRepository.findAll();
+        List<Order> orders = orderRepository.findAll();
         if (Texts.isBlank(status)) {
-            return all;
+            return orders;
         }
-        List<Order> res = new ArrayList<>();
-        for (Order x : all) {
-            if (x.getStatus().equals(status)) {
-                res.add(x);
-            }
-        }
-        return res;
+        return OrderStatus.fromName(status)
+                .map(wanted -> orders.stream().filter(order -> order.getStatus() == wanted).toList())
+                .orElse(List.of());
     }
 
     @Transactional

@@ -1,6 +1,7 @@
 package com.platoya.pedidos.service;
 
 import com.platoya.pedidos.model.Order;
+import com.platoya.pedidos.model.OrderStatus;
 import com.platoya.pedidos.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,16 +20,16 @@ public class OrderReportService {
     @Transactional(readOnly = true)
     public SalesReport buildSalesReport() {
         List<Order> orders = orderRepository.findAll();
-        long confirmed = countByStatus(orders, "CONFIRMADO");
-        long delivered = countByStatus(orders, "ENTREGADO");
-        long cancelled = countByStatus(orders, "CANCELADO");
+        long confirmed = countByStatus(orders, OrderStatus.CONFIRMADO);
+        long delivered = countByStatus(orders, OrderStatus.ENTREGADO);
+        long cancelled = countByStatus(orders, OrderStatus.CANCELADO);
         double billedAmount = sumBilledTotals(orders);
         return new SalesReport(orders.size(), confirmed, delivered, cancelled,
                 Math.round(billedAmount * 100.0) / 100.0, averageTicket(billedAmount, confirmed + delivered));
     }
 
-    private long countByStatus(List<Order> orders, String status) {
-        return orders.stream().filter(order -> status.equals(order.getStatus())).count();
+    private long countByStatus(List<Order> orders, OrderStatus status) {
+        return orders.stream().filter(order -> order.getStatus() == status).count();
     }
 
     private double sumBilledTotals(List<Order> orders) {
