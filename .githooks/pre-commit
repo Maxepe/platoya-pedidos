@@ -1,0 +1,11 @@
+#!/bin/sh
+# Cadena de calidad: Linter -> Pruebas y cobertura.
+abortar() {
+    echo "pre-commit: COMMIT ABORTADO en la etapa '$1'. Corregí y volvé a ejecutar git commit."
+    exit 1
+}
+echo "==> [1/2] Linter: Checkstyle"
+mvn -q checkstyle:check || abortar "Linter"
+echo "==> [2/2] Pruebas y cobertura: mvn verify"
+mvn -q verify -Dcheckstyle.skip || abortar "Pruebas y cobertura"
+echo "pre-commit: controles superados. Commit autorizado."

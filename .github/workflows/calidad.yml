@@ -1,0 +1,27 @@
+name: calidad
+on:
+  push:
+    branches: [main, "refactor/**"]
+  pull_request:
+jobs:
+  calidad:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+      - name: Linter (Checkstyle)
+        run: mvn -B checkstyle:check
+      - name: Pruebas y cobertura
+        run: mvn -B verify -Dcheckstyle.skip
+      - name: Publicar reportes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reportes
+          path: |
+            target/site/jacoco
+            target/surefire-reports
