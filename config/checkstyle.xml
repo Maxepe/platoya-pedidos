@@ -7,7 +7,10 @@
     <property name="charset" value="UTF-8"/>
     <property name="severity" value="error"/>
 
+    <module name="SuppressWarningsFilter"/>
+
     <module name="TreeWalker">
+        <module name="SuppressWarningsHolder"/>
 
         <!-- Item 2: funciones cortas -->
         <module name="MethodLength">

@@ -7,12 +7,15 @@ import com.platoya.pedidos.model.OrderItem;
 import com.platoya.pedidos.model.Product;
 import com.platoya.pedidos.repository.ProductRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/** Reserva y repone stock dentro de la transaccion del pedido. */
+/** Reserva y repone stock. Debe ejecutarse dentro de la transaccion del pedido. */
 @Service
+@Transactional(propagation = Propagation.MANDATORY)
 public class InventoryService {
 
     private final ProductRepository productRepository;

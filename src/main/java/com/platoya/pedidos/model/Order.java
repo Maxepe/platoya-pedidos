@@ -51,6 +51,8 @@ public class Order {
     protected Order() {
     }
 
+    // CR-06: 15 asignaciones sin logica; partirlo no mejora la legibilidad.
+    @SuppressWarnings("checkstyle:MethodLength")
     public static Order confirm(CustomerInfo customer, DeliveryAddress address,
                                 List<OrderItem> items, PriceBreakdown price) {
         Order order = new Order();
