@@ -1,6 +1,5 @@
 package com.platoya.pedidos.service;
 
-import com.platoya.pedidos.controller.OrderRequestDto;
 import com.platoya.pedidos.model.Order;
 import com.platoya.pedidos.model.OrderItem;
 import com.platoya.pedidos.model.Product;
@@ -20,12 +19,12 @@ public class InventoryService {
         this.productRepository = productRepository;
     }
 
-    public List<OrderItem> reserve(List<OrderRequestDto.ItemDto> lines) {
+    public List<OrderItem> reserve(List<OrderLineRequest> lines) {
         List<OrderItem> items = new ArrayList<>();
-        for (OrderRequestDto.ItemDto line : lines) {
+        for (OrderLineRequest line : lines) {
             Product product = findAvailableProduct(line);
-            product.decreaseStock(line.getQuantity());
-            items.add(OrderItem.of(product, line.getQuantity()));
+            product.decreaseStock(line.quantity());
+            items.add(OrderItem.of(product, line.quantity()));
         }
         return items;
     }
@@ -37,21 +36,21 @@ public class InventoryService {
         }
     }
 
-    private Product findAvailableProduct(OrderRequestDto.ItemDto line) {
+    private Product findAvailableProduct(OrderLineRequest line) {
         validateLine(line);
-        Product product = productRepository.findById(line.getProductId())
-                .orElseThrow(() -> new RuntimeException("Producto inexistente: " + line.getProductId()));
-        if (!product.hasStock(line.getQuantity())) {
+        Product product = productRepository.findById(line.productId())
+                .orElseThrow(() -> new RuntimeException("Producto inexistente: " + line.productId()));
+        if (!product.hasStock(line.quantity())) {
             throw new RuntimeException("Stock insuficiente para " + product.getName());
         }
         return product;
     }
 
-    private void validateLine(OrderRequestDto.ItemDto line) {
-        if (line == null || line.getProductId() == null) {
+    private void validateLine(OrderLineRequest line) {
+        if (line == null || line.productId() == null) {
             throw new RuntimeException("Item invalido");
         }
-        if (line.getQuantity() <= 0) {
+        if (line.quantity() <= 0) {
             throw new RuntimeException("La cantidad debe ser mayor a cero");
         }
     }

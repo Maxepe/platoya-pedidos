@@ -30,9 +30,7 @@ public class OrderController {
     @PostMapping
     public ResponseEntity<?> create(@RequestBody OrderRequestDto r) {
         try {
-            Order o = processor.processOrder(r.getCustomerName(), r.getCustomerEmail(), r.getCustomerPhone(),
-                    r.getCustomerType(), r.getStreet(), r.getCity(), r.getZipCode(), r.getItems());
-            return ResponseEntity.ok(o);
+            return ResponseEntity.ok(processor.createOrder(r.toOrderRequest()));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }

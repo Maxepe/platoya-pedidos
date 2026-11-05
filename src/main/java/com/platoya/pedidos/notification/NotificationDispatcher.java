@@ -36,9 +36,8 @@ public class NotificationDispatcher implements OrderNotifier {
     }
 
     private void sendWhatsAppIfPossible(Order order, String text) {
-        String phone = order.getCustomerPhone();
-        if (phone != null && !phone.trim().isEmpty()) {
-            whatsApp.sendMessage(phone, text);
+        if (order.hasCustomerPhone()) {
+            whatsApp.sendMessage(order.getCustomerPhone(), text);
         }
     }
 }

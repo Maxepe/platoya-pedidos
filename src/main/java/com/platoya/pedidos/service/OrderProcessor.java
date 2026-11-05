@@ -1,19 +1,19 @@
 package com.platoya.pedidos.service;
 
-import com.platoya.pedidos.controller.OrderRequestDto;
 import com.platoya.pedidos.model.Order;
 import com.platoya.pedidos.model.OrderItem;
 import com.platoya.pedidos.model.PriceBreakdown;
 import com.platoya.pedidos.notification.OrderNotifier;
 import com.platoya.pedidos.pricing.OrderPricingService;
 import com.platoya.pedidos.repository.OrderRepository;
+import com.platoya.pedidos.support.Texts;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Coordina el ciclo de vida del pedido. Delega stock, precios y avisos en componentes dedicados. */
 @Service
 public class OrderProcessor {
 
@@ -31,25 +31,10 @@ public class OrderProcessor {
     }
 
     @Transactional
-    public Order processOrder(String customerName, String customerEmail, String customerPhone,
-                              String customerType, String street, String city, String zipCode,
-                              List<OrderRequestDto.ItemDto> items) {
-        validateRequest(customerName, customerEmail, street, city, items);
-        List<OrderItem> orderItems = inventoryService.reserve(items);
-        PriceBreakdown price = pricingService.price(orderItems, customerType);
-
-        Order order = new Order();
-        order.setCustomerName(customerName);
-        order.setCustomerEmail(customerEmail);
-        order.setCustomerPhone(customerPhone);
-        order.setCustomerType(customerType);
-        order.setStreet(street);
-        order.setCity(city);
-        order.setZipCode(zipCode);
-        order.setItems(orderItems);
-        applyPrice(order, price);
-        order.setStatus("CONFIRMADO");
-        order.setCreatedAt(LocalDateTime.now());
+    public Order createOrder(OrderRequest request) {
+        List<OrderItem> items = inventoryService.reserve(request.lines());
+        PriceBreakdown price = pricingService.price(items, request.customer().type());
+        Order order = Order.confirm(request.customer(), request.deliveryAddress(), items, price);
         orderRepository.save(order);
         notifier.orderConfirmed(order);
         return order;
@@ -63,7 +48,7 @@ public class OrderProcessor {
     @Transactional(readOnly = true)
     public List<Order> listOrders(String status) {
         List<Order> all = orderRepository.findAll();
-        if (status == null || status.trim().isEmpty()) {
+        if (Texts.isBlank(status)) {
             return all;
         }
         List<Order> res = new ArrayList<>();
@@ -92,36 +77,8 @@ public class OrderProcessor {
         return order;
     }
 
-    private void validateRequest(String customerName, String customerEmail, String street, String city,
-                                 List<OrderRequestDto.ItemDto> items) {
-        if (isBlank(customerName)) {
-            throw new RuntimeException("El nombre del cliente es obligatorio");
-        }
-        if (isBlank(customerEmail) || !customerEmail.contains("@")) {
-            throw new RuntimeException("El email del cliente es invalido");
-        }
-        if (isBlank(street) || isBlank(city)) {
-            throw new RuntimeException("La direccion de entrega es obligatoria");
-        }
-        if (items == null || items.isEmpty()) {
-            throw new RuntimeException("El pedido no tiene items");
-        }
-    }
-
-    private void applyPrice(Order order, PriceBreakdown price) {
-        order.setSubtotal(price.subtotal());
-        order.setDiscount(price.discount());
-        order.setTax(price.tax());
-        order.setShippingCost(price.shippingCost());
-        order.setTotal(price.total());
-    }
-
     private Order findOrderOrThrow(Long orderId) {
         return orderRepository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Pedido no encontrado: " + orderId));
-    }
-
-    private static boolean isBlank(String value) {
-        return value == null || value.trim().isEmpty();
     }
 }
