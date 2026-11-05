@@ -1,5 +1,6 @@
 package com.platoya.pedidos.model;
 
+import com.platoya.pedidos.exception.BusinessRuleException;
 import com.platoya.pedidos.support.Texts;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -91,7 +92,7 @@ public class Order {
 
     private void requireConfirmed(String message) {
         if (status != OrderStatus.CONFIRMADO) {
-            throw new RuntimeException(message);
+            throw new BusinessRuleException(message);
         }
     }
 

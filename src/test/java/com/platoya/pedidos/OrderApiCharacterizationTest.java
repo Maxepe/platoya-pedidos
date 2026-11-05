@@ -242,10 +242,10 @@ class OrderApiCharacterizationTest {
     }
 
     @Test
-    @DisplayName("C20 - Cancelar un pedido inexistente es rechazado")
+    @DisplayName("C20 - Cancelar un pedido inexistente responde 404 (cambio deliberado D2)")
     void cancelarInexistente() throws Exception {
         mvc.perform(post("/api/orders/99/cancel"))
-                .andExpect(status().isBadRequest())
+                .andExpect(status().isNotFound())
                 .andExpect(content().string("Pedido no encontrado: 99"));
     }
 
@@ -263,11 +263,12 @@ class OrderApiCharacterizationTest {
     }
 
     @Test
-    @DisplayName("C22 - Consultar un pedido inexistente (comportamiento base: 200 sin cuerpo)")
+    @DisplayName("C22 - Consultar un pedido inexistente responde 404 con mensaje (cambio deliberado D2)")
     void consultarInexistente() throws Exception {
+        // D2: en la version base respondia 200 con cuerpo vacio.
         mvc.perform(get("/api/orders/99"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(""));
+                .andExpect(status().isNotFound())
+                .andExpect(content().string("Pedido no encontrado: 99"));
     }
 
     @Test

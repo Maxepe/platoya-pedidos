@@ -1,5 +1,6 @@
 package com.platoya.pedidos.service;
 
+import com.platoya.pedidos.exception.OrderNotFoundException;
 import com.platoya.pedidos.model.Order;
 import com.platoya.pedidos.model.OrderItem;
 import com.platoya.pedidos.model.OrderStatus;
@@ -41,8 +42,8 @@ public class OrderProcessor {
     }
 
     @Transactional(readOnly = true)
-    public Order getOrder(Long id) {
-        return orderRepository.findById(id).orElse(null);
+    public Order getOrder(Long orderId) {
+        return findOrderOrThrow(orderId);
     }
 
     @Transactional(readOnly = true)
@@ -75,6 +76,6 @@ public class OrderProcessor {
 
     private Order findOrderOrThrow(Long orderId) {
         return orderRepository.findById(orderId)
-                .orElseThrow(() -> new RuntimeException("Pedido no encontrado: " + orderId));
+                .orElseThrow(() -> new OrderNotFoundException(orderId));
     }
 }

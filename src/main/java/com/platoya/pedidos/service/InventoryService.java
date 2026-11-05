@@ -1,5 +1,7 @@
 package com.platoya.pedidos.service;
 
+import com.platoya.pedidos.exception.BusinessRuleException;
+import com.platoya.pedidos.exception.InsufficientStockException;
 import com.platoya.pedidos.model.Order;
 import com.platoya.pedidos.model.OrderItem;
 import com.platoya.pedidos.model.Product;
@@ -39,19 +41,19 @@ public class InventoryService {
     private Product findAvailableProduct(OrderLineRequest line) {
         validateLine(line);
         Product product = productRepository.findById(line.productId())
-                .orElseThrow(() -> new RuntimeException("Producto inexistente: " + line.productId()));
+                .orElseThrow(() -> new BusinessRuleException("Producto inexistente: " + line.productId()));
         if (!product.hasStock(line.quantity())) {
-            throw new RuntimeException("Stock insuficiente para " + product.getName());
+            throw new InsufficientStockException(product.getName());
         }
         return product;
     }
 
     private void validateLine(OrderLineRequest line) {
         if (line == null || line.productId() == null) {
-            throw new RuntimeException("Item invalido");
+            throw new BusinessRuleException("Item invalido");
         }
         if (line.quantity() <= 0) {
-            throw new RuntimeException("La cantidad debe ser mayor a cero");
+            throw new BusinessRuleException("La cantidad debe ser mayor a cero");
         }
     }
 }

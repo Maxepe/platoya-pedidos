@@ -1,5 +1,6 @@
 package com.platoya.pedidos.service;
 
+import com.platoya.pedidos.exception.BusinessRuleException;
 import com.platoya.pedidos.model.CustomerInfo;
 import com.platoya.pedidos.model.DeliveryAddress;
 
@@ -9,7 +10,7 @@ public record OrderRequest(CustomerInfo customer, DeliveryAddress deliveryAddres
 
     public OrderRequest {
         if (lines == null || lines.isEmpty()) {
-            throw new RuntimeException("El pedido no tiene items");
+            throw new BusinessRuleException("El pedido no tiene items");
         }
     }
 }
