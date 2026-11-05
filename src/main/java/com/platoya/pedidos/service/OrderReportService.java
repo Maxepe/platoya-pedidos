@@ -2,6 +2,7 @@ package com.platoya.pedidos.service;
 
 import com.platoya.pedidos.model.Order;
 import com.platoya.pedidos.model.OrderStatus;
+import com.platoya.pedidos.pricing.Amounts;
 import com.platoya.pedidos.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,7 +26,7 @@ public class OrderReportService {
         long cancelled = countByStatus(orders, OrderStatus.CANCELADO);
         double billedAmount = sumBilledTotals(orders);
         return new SalesReport(orders.size(), confirmed, delivered, cancelled,
-                Math.round(billedAmount * 100.0) / 100.0, averageTicket(billedAmount, confirmed + delivered));
+                Amounts.roundToCents(billedAmount), averageTicket(billedAmount, confirmed + delivered));
     }
 
     private long countByStatus(List<Order> orders, OrderStatus status) {
@@ -43,6 +44,6 @@ public class OrderReportService {
         if (billedOrders == 0) {
             return 0.0;
         }
-        return Math.round(billedAmount / billedOrders * 100.0) / 100.0;
+        return Amounts.roundToCents(billedAmount / billedOrders);
     }
 }

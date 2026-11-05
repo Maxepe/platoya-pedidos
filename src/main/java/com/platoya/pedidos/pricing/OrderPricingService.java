@@ -9,6 +9,10 @@ import java.util.List;
 @Service
 public class OrderPricingService {
 
+    static final double TAX_RATE = 0.21;
+    static final double FREE_SHIPPING_THRESHOLD = 20000;
+    static final double SHIPPING_COST = 1500;
+
     private final CustomerPricingPolicies pricingPolicies;
 
     public OrderPricingService(CustomerPricingPolicies pricingPolicies) {
@@ -20,9 +24,9 @@ public class OrderPricingService {
         double subtotal = calculateSubtotal(items);
         double discount = policy.discountFor(subtotal);
         double taxableAmount = subtotal - discount;
-        double tax = taxableAmount * 0.21;
+        double tax = taxableAmount * TAX_RATE;
         double shippingCost = calculateShipping(taxableAmount, policy);
-        double total = Math.round((taxableAmount + tax + shippingCost) * 100.0) / 100.0;
+        double total = Amounts.roundToCents(taxableAmount + tax + shippingCost);
         return new PriceBreakdown(subtotal, discount, tax, shippingCost, total);
     }
 
@@ -33,9 +37,9 @@ public class OrderPricingService {
     }
 
     private double calculateShipping(double taxableAmount, CustomerPricingPolicy policy) {
-        if (policy.hasFreeShipping() || taxableAmount >= 20000) {
+        if (policy.hasFreeShipping() || taxableAmount >= FREE_SHIPPING_THRESHOLD) {
             return 0;
         }
-        return 1500;
+        return SHIPPING_COST;
     }
 }
