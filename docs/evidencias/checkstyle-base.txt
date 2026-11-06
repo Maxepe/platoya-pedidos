@@ -1,0 +1,121 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.platoya:platoya-pedidos >---------------------
+[INFO] Building platoya-pedidos 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (default-cli) @ platoya-pedidos ---
+[INFO] Comenzando auditoría...
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\controller\OrderController.java:22: Inyeccion por campo: usar inyeccion por constructor. [fieldInjection]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\controller\OrderController.java:28:19: El nombre 'o' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\controller\OrderController.java:31:11: Capturar la excepción 'Exception' no está permitido. [IllegalCatch]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\controller\OrderController.java:50:11: Capturar la excepción 'Exception' no está permitido. [IllegalCatch]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\controller\OrderController.java:59:11: Capturar la excepción 'Exception' no está permitido. [IllegalCatch]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\controller\ProductController.java:16: Inyeccion por campo: usar inyeccion por constructor. [fieldInjection]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:24: Inyeccion por campo: usar inyeccion por constructor. [fieldInjection]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:27: Inyeccion por campo: usar inyeccion por constructor. [fieldInjection]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:30:5: El tamaño del método processOrder es 82 líneas (máximas permitidas 15). [MethodLength]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:30:5: La complejidad ciclomática es 27 (máxima permitida es 5). [CyclomaticComplexity]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:30:18: Más de 4 parámetros (encontrado 8). [ParameterNumber]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:47:15: El nombre 'o' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:59:38: El nombre 'it' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:66:31: El nombre 'op' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:70:21: El nombre 'p' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:77:23: El nombre 'oi' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:88:16: El nombre 'd' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:90:28: '0.10' es un número mágico. [MagicNumber]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:92:28: '0.20' es un número mágico. [MagicNumber]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:97:28: '0.21' es un número mágico. [MagicNumber]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:101:26: '20000' es un número mágico. [MagicNumber]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:102:21: '1500' es un número mágico. [MagicNumber]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:105:36: '100.0' es un número mágico. [MagicNumber]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:105:45: '100.0' es un número mágico. [MagicNumber]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:117: Dependencia concreta de notificacion: inyectar la abstraccion (DIP). [concreteNotifier]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:121: Dependencia concreta de notificacion: inyectar la abstraccion (DIP). [concreteNotifier]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:121:29: El nombre 'wa' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:137:20: El nombre 'x' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:145:5: El tamaño del método cancelOrder es 24 líneas (máximas permitidas 15). [MethodLength]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:149:25: El nombre 'oo' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:153:15: El nombre 'o' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:157:24: El nombre 'oi' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:158:21: El nombre 'p' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:165: Dependencia concreta de notificacion: inyectar la abstraccion (DIP). [concreteNotifier]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:171:5: El tamaño del método deliverOrder es 20 líneas (máximas permitidas 15). [MethodLength]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:171:5: La complejidad ciclomática es 6 (máxima permitida es 5). [CyclomaticComplexity]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:175:25: El nombre 'oo' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:179:15: El nombre 'o' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:187: Dependencia concreta de notificacion: inyectar la abstraccion (DIP). [concreteNotifier]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:187:29: El nombre 'wa' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:193:5: El tamaño del método report es 30 líneas (máximas permitidas 15). [MethodLength]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:193:5: La complejidad ciclomática es 6 (máxima permitida es 5). [CyclomaticComplexity]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:195:13: El nombre 'c1' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:196:13: El nombre 'c2' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:197:13: El nombre 'c3' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:199:20: El nombre 'x' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:210:29: El nombre 'r' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'. [LocalVariableName]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:215:51: '100.0' es un número mágico. [MagicNumber]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:215:60: '100.0' es un número mágico. [MagicNumber]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:217:67: '100.0' es un número mágico. [MagicNumber]
+[ERROR] D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\main\java\com\platoya\pedidos\service\OrderProcessor.java:217:76: '100.0' es un número mágico. [MagicNumber]
+Auditoría concluida.
+[INFO] There are 51 errors reported by Checkstyle 9.3 with config/checkstyle.xml ruleset.
+[ERROR] src\main\java\com\platoya\pedidos\controller\OrderController.java:[22] (extension) fieldInjection: Inyeccion por campo: usar inyeccion por constructor.
+[ERROR] src\main\java\com\platoya\pedidos\controller\OrderController.java:[28,19] (naming) LocalVariableName: El nombre 'o' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\controller\OrderController.java:[31,11] (coding) IllegalCatch: Capturar la excepción 'Exception' no está permitido.
+[ERROR] src\main\java\com\platoya\pedidos\controller\OrderController.java:[50,11] (coding) IllegalCatch: Capturar la excepción 'Exception' no está permitido.
+[ERROR] src\main\java\com\platoya\pedidos\controller\OrderController.java:[59,11] (coding) IllegalCatch: Capturar la excepción 'Exception' no está permitido.
+[ERROR] src\main\java\com\platoya\pedidos\controller\ProductController.java:[16] (extension) fieldInjection: Inyeccion por campo: usar inyeccion por constructor.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[24] (extension) fieldInjection: Inyeccion por campo: usar inyeccion por constructor.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[27] (extension) fieldInjection: Inyeccion por campo: usar inyeccion por constructor.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[30,5] (sizes) MethodLength: El tamaño del método processOrder es 82 líneas (máximas permitidas 15).
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[30,5] (metrics) CyclomaticComplexity: La complejidad ciclomática es 27 (máxima permitida es 5).
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[30,18] (sizes) ParameterNumber: Más de 4 parámetros (encontrado 8).
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[47,15] (naming) LocalVariableName: El nombre 'o' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[59,38] (naming) LocalVariableName: El nombre 'it' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[66,31] (naming) LocalVariableName: El nombre 'op' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[70,21] (naming) LocalVariableName: El nombre 'p' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[77,23] (naming) LocalVariableName: El nombre 'oi' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[88,16] (naming) LocalVariableName: El nombre 'd' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[90,28] (coding) MagicNumber: '0.10' es un número mágico.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[92,28] (coding) MagicNumber: '0.20' es un número mágico.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[97,28] (coding) MagicNumber: '0.21' es un número mágico.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[101,26] (coding) MagicNumber: '20000' es un número mágico.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[102,21] (coding) MagicNumber: '1500' es un número mágico.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[105,36] (coding) MagicNumber: '100.0' es un número mágico.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[105,45] (coding) MagicNumber: '100.0' es un número mágico.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[117] (extension) concreteNotifier: Dependencia concreta de notificacion: inyectar la abstraccion (DIP).
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[121] (extension) concreteNotifier: Dependencia concreta de notificacion: inyectar la abstraccion (DIP).
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[121,29] (naming) LocalVariableName: El nombre 'wa' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[137,20] (naming) LocalVariableName: El nombre 'x' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[145,5] (sizes) MethodLength: El tamaño del método cancelOrder es 24 líneas (máximas permitidas 15).
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[149,25] (naming) LocalVariableName: El nombre 'oo' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[153,15] (naming) LocalVariableName: El nombre 'o' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[157,24] (naming) LocalVariableName: El nombre 'oi' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[158,21] (naming) LocalVariableName: El nombre 'p' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[165] (extension) concreteNotifier: Dependencia concreta de notificacion: inyectar la abstraccion (DIP).
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[171,5] (sizes) MethodLength: El tamaño del método deliverOrder es 20 líneas (máximas permitidas 15).
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[171,5] (metrics) CyclomaticComplexity: La complejidad ciclomática es 6 (máxima permitida es 5).
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[175,25] (naming) LocalVariableName: El nombre 'oo' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[179,15] (naming) LocalVariableName: El nombre 'o' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[187] (extension) concreteNotifier: Dependencia concreta de notificacion: inyectar la abstraccion (DIP).
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[187,29] (naming) LocalVariableName: El nombre 'wa' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[193,5] (sizes) MethodLength: El tamaño del método report es 30 líneas (máximas permitidas 15).
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[193,5] (metrics) CyclomaticComplexity: La complejidad ciclomática es 6 (máxima permitida es 5).
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[195,13] (naming) LocalVariableName: El nombre 'c1' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[196,13] (naming) LocalVariableName: El nombre 'c2' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[197,13] (naming) LocalVariableName: El nombre 'c3' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[199,20] (naming) LocalVariableName: El nombre 'x' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[210,29] (naming) LocalVariableName: El nombre 'r' debe coincidir con el patrón '^[a-z][a-zA-Z0-9]{2,}$'.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[215,51] (coding) MagicNumber: '100.0' es un número mágico.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[215,60] (coding) MagicNumber: '100.0' es un número mágico.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[217,67] (coding) MagicNumber: '100.0' es un número mágico.
+[ERROR] src\main\java\com\platoya\pedidos\service\OrderProcessor.java:[217,76] (coding) MagicNumber: '100.0' es un número mágico.
+[WARNING] checkstyle:check violations detected but failOnViolation set to false
+[INFO] You have 51 Checkstyle violations.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.387 s
+[INFO] Finished at: 2026-11-05T16:13:21-03:00
+[INFO] ------------------------------------------------------------------------

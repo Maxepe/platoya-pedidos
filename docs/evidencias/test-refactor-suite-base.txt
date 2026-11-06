@@ -1,0 +1,1230 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.platoya:platoya-pedidos >---------------------
+[INFO] Building platoya-pedidos 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (linter) @ platoya-pedidos ---
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (default) @ platoya-pedidos ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ platoya-pedidos ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ platoya-pedidos ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ platoya-pedidos ---
+[INFO] skip non existing resourceDirectory D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ platoya-pedidos ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 5 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.5:test (default-test) @ platoya-pedidos ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.platoya.pedidos.OrderApiCharacterizationTest
+00:22:21.668 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.platoya.pedidos.OrderApiCharacterizationTest]: OrderApiCharacterizationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:22:21.744 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.platoya.pedidos.PlatoYaApplication for test class com.platoya.pedidos.OrderApiCharacterizationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:22.033-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:22.033-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:22.523-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:22.565-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:23.110-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:23.161-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.49.Final
+2026-11-06T00:22:23.183-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:23.441-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:23.459-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-06T00:22:23.602-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:23.603-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-06T00:22:23.636-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:24.095-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:24.121-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:25.304-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:25.440-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:25.440-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:25.442-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:25.483-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 3.644 seconds (process running for 4.25)
+2026-11-06T00:22:25.506-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:25.516-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-11-06T00:22:25.519-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:25.537-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:25.538-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:25.637-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:25.645-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:25.684-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:25.685-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:25.689-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:25.690-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-11-06T00:22:25.691-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:25.692-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-11-06T00:22:25.692-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:25.716-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:25.718-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:25.790-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:25.800-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:25.800-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:25.800-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:25.803-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.282 seconds (process running for 4.571)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\Maxepe\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $18440.0
+[WHATSAPP] Para: +5490000000002 | PlatoYa: tu pedido #1 fue confirmado. Total: $18440.0
+2026-11-06T00:22:26.279-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:26.280-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-11-06T00:22:26.281-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:26.296-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:26.296-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:26.384-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:26.392-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:26.422-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:26.423-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:26.429-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:26.429-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-11-06T00:22:26.430-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:26.430-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-11-06T00:22:26.430-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:26.460-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:26.463-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:26.520-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:26.529-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:26.529-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:26.530-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-06T00:22:26.533-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.251 seconds (process running for 5.3)
+2026-11-06T00:22:26.563-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:26.564-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-11-06T00:22:26.565-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:26.577-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:26.577-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:26.656-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:26.665-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:26.695-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:26.696-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:26.700-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:26.700-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-11-06T00:22:26.701-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn22: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:26.701-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-11-06T00:22:26.701-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:26.725-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:26.728-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:26.790-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:26.799-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:26.800-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:26.800-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:26.804-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.238 seconds (process running for 5.571)
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/orders/99/cancel
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.platoya.pedidos.controller.OrderController
+           Method = com.platoya.pedidos.controller.OrderController#cancel(Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = com.platoya.pedidos.exception.OrderNotFoundException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = null
+          Headers = [Content-Type:"text/plain;charset=UTF-8", Content-Length:"24"]
+     Content type = text/plain;charset=UTF-8
+             Body = Pedido no encontrado: 99
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-06T00:22:26.834-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:26.835-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2026-11-06T00:22:26.844-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:26.855-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:26.855-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:26.933-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:26.941-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:26.969-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:26.970-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:26.974-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:26.975-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2026-11-06T00:22:26.976-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection conn24: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:26.976-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2026-11-06T00:22:26.976-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-5)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:27.000-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:27.003-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:27.061-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:27.069-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:27.069-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:27.069-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:27.075-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.23 seconds (process running for 5.842)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $18440.0
+[WHATSAPP] Para: +5490000000002 | PlatoYa: tu pedido #1 fue confirmado. Total: $18440.0
+[WHATSAPP] Para: +5490000000002 | PlatoYa: tu pedido #1 fue entregado. Gracias!
+2026-11-06T00:22:27.226-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:27.228-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2026-11-06T00:22:27.231-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:27.243-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:27.243-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:27.318-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:27.326-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:27.355-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:27.356-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:27.362-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:27.362-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2026-11-06T00:22:27.363-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection conn30: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:27.363-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2026-11-06T00:22:27.364-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-6)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:27.387-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:27.389-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:27.447-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:27.454-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:27.454-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:27.454-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:27.457-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.225 seconds (process running for 6.224)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $32670.0
+2026-11-06T00:22:27.473-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:27.474-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2026-11-06T00:22:27.495-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:27.505-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:27.506-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:27.577-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:27.583-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:27.608-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:27.609-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:27.612-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:27.613-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2026-11-06T00:22:27.613-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection conn32: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:27.614-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2026-11-06T00:22:27.614-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-7)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:27.635-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:27.638-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:27.683-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:27.690-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:27.690-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:27.690-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:27.692-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.196 seconds (process running for 6.46)
+2026-11-06T00:22:27.698-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:27.699-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2026-11-06T00:22:27.700-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:27.708-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:27.708-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:27.773-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:27.779-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:27.801-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:27.802-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:27.805-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:27.806-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2026-11-06T00:22:27.807-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection conn33: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:27.807-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2026-11-06T00:22:27.807-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-8)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:27.828-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:27.830-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:27.877-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:27.883-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:27.883-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:27.884-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-06T00:22:27.886-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.186 seconds (process running for 6.653)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/orders/99
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.platoya.pedidos.controller.OrderController
+           Method = com.platoya.pedidos.controller.OrderController#get(Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = com.platoya.pedidos.exception.OrderNotFoundException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = null
+          Headers = [Content-Type:"text/plain;charset=UTF-8", Content-Length:"24"]
+     Content type = text/plain;charset=UTF-8
+             Body = Pedido no encontrado: 99
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-06T00:22:27.895-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:27.895-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2026-11-06T00:22:27.896-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:27.905-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:27.905-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:27.968-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:27.975-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:27.996-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:27.997-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:28.000-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:28.001-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2026-11-06T00:22:28.001-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Added connection conn34: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:28.001-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2026-11-06T00:22:28.002-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-9)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:28.023-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:28.026-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:28.069-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:28.075-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:28.075-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:28.075-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:28.078-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.181 seconds (process running for 6.845)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $18440.0
+2026-11-06T00:22:28.091-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:28.091-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2026-11-06T00:22:28.092-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:28.102-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:28.103-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:28.167-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:28.174-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:28.195-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:28.196-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:28.200-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:28.200-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2026-11-06T00:22:28.201-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-10 - Added connection conn35: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:28.201-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2026-11-06T00:22:28.201-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-10)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:28.221-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:28.223-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:28.268-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:28.274-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:28.274-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:28.274-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:28.276-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.183 seconds (process running for 7.044)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $18440.0
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #2 fue confirmado. Total: $9365.0
+[EMAIL] Para: ana@example.com | Asunto: Pedido cancelado | Hola Ana Prueba, tu pedido #1 fue cancelado.
+2026-11-06T00:22:28.442-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:28.443-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2026-11-06T00:22:28.471-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:28.483-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:28.483-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:28.548-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:28.557-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:28.580-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:28.581-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:28.584-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:28.585-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2026-11-06T00:22:28.585-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-11 - Added connection conn41: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:28.585-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2026-11-06T00:22:28.586-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-11)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:28.609-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:28.612-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:28.657-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:28.663-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:28.663-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:28.664-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-06T00:22:28.666-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.193 seconds (process running for 7.433)
+2026-11-06T00:22:28.670-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:28.671-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2026-11-06T00:22:28.671-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:28.680-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:28.680-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:28.741-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:28.746-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:28.766-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:28.767-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:28.770-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:28.771-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2026-11-06T00:22:28.771-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-12 - Added connection conn42: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:28.771-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2026-11-06T00:22:28.772-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-12)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:28.790-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:28.793-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:28.837-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:28.842-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:28.842-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:28.843-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-06T00:22:28.845-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.173 seconds (process running for 7.612)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $33880.0
+[EMAIL] Para: ana@example.com | Asunto: Pedido cancelado | Hola Ana Prueba, tu pedido #1 fue cancelado.
+2026-11-06T00:22:28.861-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:28.862-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2026-11-06T00:22:28.862-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:28.870-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:28.870-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:28.931-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:28.937-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:28.959-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:28.960-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:28.966-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:28.966-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
+2026-11-06T00:22:28.967-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-13 - Added connection conn43: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:28.967-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
+2026-11-06T00:22:28.967-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-13)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:28.986-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:28.988-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:29.031-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:29.037-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:29.037-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:29.037-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:29.039-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.176 seconds (process running for 7.806)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $24200.0
+2026-11-06T00:22:29.050-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:29.050-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
+2026-11-06T00:22:29.051-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:29.060-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:29.060-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:29.118-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:29.124-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:29.143-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:29.144-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:29.146-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:29.147-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Starting...
+2026-11-06T00:22:29.147-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-14 - Added connection conn44: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:29.147-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Start completed.
+2026-11-06T00:22:29.148-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-14)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:29.168-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:29.170-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:29.210-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:29.215-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:29.216-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:29.216-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:29.218-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.167 seconds (process running for 7.985)
+2026-11-06T00:22:29.226-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:29.226-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown initiated...
+2026-11-06T00:22:29.227-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:29.236-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:29.236-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:29.293-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:29.299-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:29.316-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:29.317-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:29.320-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:29.321-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Starting...
+2026-11-06T00:22:29.321-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-15 - Added connection conn45: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:29.321-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Start completed.
+2026-11-06T00:22:29.322-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-15)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:29.341-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:29.343-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:29.387-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:29.393-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:29.393-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:29.393-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:29.395-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.167 seconds (process running for 8.163)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $34303.5
+2026-11-06T00:22:29.408-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:29.409-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown initiated...
+2026-11-06T00:22:29.409-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:29.417-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:29.417-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:29.471-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:29.477-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:29.496-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:29.497-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:29.500-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:29.500-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Starting...
+2026-11-06T00:22:29.501-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-16 - Added connection conn46: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:29.501-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Start completed.
+2026-11-06T00:22:29.501-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-16)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:29.520-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:29.523-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:29.568-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:29.573-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:29.573-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:29.573-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:29.575-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.165 seconds (process running for 8.342)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $33880.0
+2026-11-06T00:22:29.586-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:29.587-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown initiated...
+2026-11-06T00:22:29.587-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:29.597-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:29.597-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:29.653-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:29.659-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:29.676-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:29.677-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:29.681-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:29.681-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Starting...
+2026-11-06T00:22:29.681-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-17 - Added connection conn47: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:29.682-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Start completed.
+2026-11-06T00:22:29.682-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-17)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:29.701-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:29.703-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:29.758-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:29.764-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:29.764-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:29.764-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:29.766-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.178 seconds (process running for 8.533)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $8276.0
+2026-11-06T00:22:29.776-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:29.776-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown initiated...
+2026-11-06T00:22:29.777-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:29.784-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:29.784-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:29.839-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:29.844-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:29.862-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:29.863-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:29.866-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:29.866-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Starting...
+2026-11-06T00:22:29.866-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Added connection conn48: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:29.866-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Start completed.
+2026-11-06T00:22:29.867-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-18)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:29.884-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:29.886-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:29.924-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:29.930-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:29.930-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:29.931-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-06T00:22:29.933-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.156 seconds (process running for 8.7)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $18440.0
+[WHATSAPP] Para: +5490000000002 | PlatoYa: tu pedido #1 fue confirmado. Total: $18440.0
+2026-11-06T00:22:29.941-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:29.942-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown initiated...
+2026-11-06T00:22:29.942-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:29.950-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:29.950-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:30.006-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:30.012-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:30.030-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:30.031-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:30.034-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:30.035-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Starting...
+2026-11-06T00:22:30.035-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-19 - Added connection conn49: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:30.035-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Start completed.
+2026-11-06T00:22:30.036-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-19)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:30.052-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:30.054-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:30.094-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:30.099-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:30.099-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:30.099-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:30.101-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.158 seconds (process running for 8.869)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $5735.0
+2026-11-06T00:22:30.111-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:30.111-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown initiated...
+2026-11-06T00:22:30.111-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:30.119-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:30.119-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:30.178-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:30.185-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:30.204-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:30.205-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:30.208-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:30.208-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Starting...
+2026-11-06T00:22:30.209-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-20 - Added connection conn50: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:30.209-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Start completed.
+2026-11-06T00:22:30.209-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-20)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:30.228-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:30.230-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:30.270-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:30.275-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:30.275-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:30.275-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:30.277-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.165 seconds (process running for 9.044)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $18440.0
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #2 fue confirmado. Total: $32670.0
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #3 fue confirmado. Total: $3811.5
+[EMAIL] Para: ana@example.com | Asunto: Pedido cancelado | Hola Ana Prueba, tu pedido #3 fue cancelado.
+2026-11-06T00:22:30.307-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:30.308-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown initiated...
+2026-11-06T00:22:30.308-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:30.317-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:30.317-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:30.373-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:30.378-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:30.396-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:30.397-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:30.401-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:30.402-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Starting...
+2026-11-06T00:22:30.402-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-21 - Added connection conn51: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:30.402-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Start completed.
+2026-11-06T00:22:30.402-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-21)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:30.420-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:30.423-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:30.463-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:30.467-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:30.467-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:30.468-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-06T00:22:30.469-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.16 seconds (process running for 9.237)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $18440.0
+[EMAIL] Para: ana@example.com | Asunto: Pedido cancelado | Hola Ana Prueba, tu pedido #1 fue cancelado.
+2026-11-06T00:22:30.483-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:30.483-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Shutdown initiated...
+2026-11-06T00:22:30.484-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:30.492-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:30.492-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:30.547-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:30.553-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:30.572-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:30.573-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:30.576-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:30.576-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Starting...
+2026-11-06T00:22:30.577-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-22 - Added connection conn52: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:30.577-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Start completed.
+2026-11-06T00:22:30.577-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-22)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:30.596-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:30.598-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:30.638-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:30.643-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:30.643-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:30.644-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-06T00:22:30.645-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.161 seconds (process running for 9.413)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $34303.5
+[WHATSAPP] Para: +5490000000001 | PlatoYa: tu pedido #1 fue confirmado. Total: $34303.5
+2026-11-06T00:22:30.655-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:30.656-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Shutdown initiated...
+2026-11-06T00:22:30.656-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:30.665-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:30.665-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:30.715-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:30.720-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:30.738-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:30.739-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:30.742-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:30.742-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Starting...
+2026-11-06T00:22:30.743-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-23 - Added connection conn53: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:30.743-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Start completed.
+2026-11-06T00:22:30.743-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-23)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:30.760-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:30.762-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:30.804-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:30.808-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:30.808-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:30.808-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:30.810-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.153 seconds (process running for 9.577)
+[EMAIL] Para: ana@example.com | Asunto: Pedido confirmado | Hola Ana Prueba, tu pedido #1 fue confirmado. Total: $3811.5
+2026-11-06T00:22:30.818-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:30.819-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Shutdown initiated...
+2026-11-06T00:22:30.819-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:30.828-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:30.828-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:30.879-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:30.885-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:30.902-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:30.903-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:30.906-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:30.907-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Starting...
+2026-11-06T00:22:30.907-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-24 - Added connection conn54: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:30.907-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Start completed.
+2026-11-06T00:22:30.907-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-24)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:30.923-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:30.925-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:30.962-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:30.967-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:30.967-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:30.967-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:30.969-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.149 seconds (process running for 9.736)
+2026-11-06T00:22:30.974-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:30.974-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Shutdown initiated...
+2026-11-06T00:22:30.975-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-11-06T00:22:30.982-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Starting OrderApiCharacterizationTest using Java 21.0.2 with PID 32860 (started by Maxepe in D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos)
+2026-11-06T00:22:30.982-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-11-06T00:22:31.036-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-06T00:22:31.041-03:00  INFO 32860 --- [platoya-pedidos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 2 JPA repository interfaces.
+2026-11-06T00:22:31.058-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-06T00:22:31.059-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-06T00:22:31.063-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-06T00:22:31.063-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Starting...
+2026-11-06T00:22:31.064-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-25 - Added connection conn55: url=jdbc:h2:mem:platoya user=SA
+2026-11-06T00:22:31.064-03:00  INFO 32860 --- [platoya-pedidos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Start completed.
+2026-11-06T00:22:31.064-03:00  INFO 32860 --- [platoya-pedidos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-25)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-06T00:22:31.080-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-06T00:22:31.081-03:00  INFO 32860 --- [platoya-pedidos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-06T00:22:31.119-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:platoya'
+2026-11-06T00:22:31.124-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-06T00:22:31.124-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-06T00:22:31.124-03:00  INFO 32860 --- [platoya-pedidos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-06T00:22:31.127-03:00  INFO 32860 --- [platoya-pedidos] [           main] c.p.p.OrderApiCharacterizationTest       : Started OrderApiCharacterizationTest in 0.152 seconds (process running for 9.895)
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/orders
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"247"]
+             Body = {"customerName":"Ana Prueba","customerEmail":"ana@example.com","customerPhone":null,
+ "customerType":"REGULAR","street":"Calle Falsa 123","city":"San Nicolas","zipCode":"2900",
+ "items":[{"productId":1,"quantity":1},{"productId":5,"quantity":99}]}
+    Session Attrs = {}
+
+Handler:
+             Type = com.platoya.pedidos.controller.OrderController
+           Method = com.platoya.pedidos.controller.OrderController#create(OrderRequestDto)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = com.platoya.pedidos.exception.InsufficientStockException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [Content-Type:"text/plain;charset=UTF-8", Content-Length:"40"]
+     Content type = text/plain;charset=UTF-8
+             Body = Stock insuficiente para Pizza muzzarella
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/products
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.platoya.pedidos.controller.ProductController
+           Method = com.platoya.pedidos.controller.ProductController#list()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = [{"id":1,"name":"Hamburguesa completa","category":"COCINA","price":14000.0,"stock":20},{"id":2,"name":"Cerveza pinta","category":"BARRA","price":6500.0,"stock":50},{"id":3,"name":"Gaseosa","category":"BARRA","price":3500.0,"stock":30},{"id":4,"name":"Porcion de papas","category":"COCINA","price":7000.0,"stock":10},{"id":5,"name":"Pizza muzzarella","category":"COCINA","price":12000.0,"stock":3}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+[ERROR] Tests run: 24, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 9.564 s <<< FAILURE! -- in com.platoya.pedidos.OrderApiCharacterizationTest
+[ERROR] com.platoya.pedidos.OrderApiCharacterizationTest.cancelarInexistente -- Time elapsed: 0.265 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<404>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:640)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.platoya.pedidos.OrderApiCharacterizationTest.cancelarInexistente(OrderApiCharacterizationTest.java:248)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] com.platoya.pedidos.OrderApiCharacterizationTest.consultarInexistente -- Time elapsed: 0.195 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<404>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:640)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.platoya.pedidos.OrderApiCharacterizationTest.consultarInexistente(OrderApiCharacterizationTest.java:269)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] com.platoya.pedidos.OrderApiCharacterizationTest.stockDeItemsPreviosEnPedidoRechazado -- Time elapsed: 0.163 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$[0].stock" expected:<19> but was:<20>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.platoya.pedidos.OrderApiCharacterizationTest.stockDeItemsPreviosEnPedidoRechazado(OrderApiCharacterizationTest.java:185)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   OrderApiCharacterizationTest.cancelarInexistente:248 Status expected:<400> but was:<404>
+[ERROR]   OrderApiCharacterizationTest.consultarInexistente:269 Status expected:<200> but was:<404>
+[ERROR]   OrderApiCharacterizationTest.stockDeItemsPreviosEnPedidoRechazado:185 JSON path "$[0].stock" expected:<19> but was:<20>
+[INFO] 
+[ERROR] Tests run: 24, Failures: 3, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.072 s
+[INFO] Finished at: 2026-11-06T00:22:31-03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.5:test (default-test) on project platoya-pedidos: There are test failures.
+[ERROR] 
+[ERROR] See D:\Estudio\Carreras\TUP - UTN SAN NICOLAS\Metodologia II\platoya-pedidos\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

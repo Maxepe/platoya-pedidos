@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderProcessor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">platoya-pedidos</a> &gt; <a href="index.source.html" class="el_package">com.platoya.pedidos.service</a> &gt; <span class="el_source">OrderProcessor.java</span></div><h1>OrderProcessor.java</h1><pre class="source lang-java linenums">package com.platoya.pedidos.service;
+
+import com.platoya.pedidos.exception.OrderNotFoundException;
+import com.platoya.pedidos.model.Order;
+import com.platoya.pedidos.model.OrderItem;
+import com.platoya.pedidos.model.OrderStatus;
+import com.platoya.pedidos.model.PriceBreakdown;
+import com.platoya.pedidos.notification.OrderNotifier;
+import com.platoya.pedidos.pricing.OrderPricingService;
+import com.platoya.pedidos.repository.OrderRepository;
+import com.platoya.pedidos.support.Texts;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+/** Coordina el ciclo de vida del pedido. Delega stock, precios y avisos en componentes dedicados. */
+@Service
+public class OrderProcessor {
+
+    private final OrderRepository orderRepository;
+    private final InventoryService inventoryService;
+    private final OrderPricingService pricingService;
+    private final OrderNotifier notifier;
+
+    public OrderProcessor(OrderRepository orderRepository, InventoryService inventoryService,
+<span class="fc" id="L27">                          OrderPricingService pricingService, OrderNotifier notifier) {</span>
+<span class="fc" id="L28">        this.orderRepository = orderRepository;</span>
+<span class="fc" id="L29">        this.inventoryService = inventoryService;</span>
+<span class="fc" id="L30">        this.pricingService = pricingService;</span>
+<span class="fc" id="L31">        this.notifier = notifier;</span>
+<span class="fc" id="L32">    }</span>
+
+    @Transactional
+    public Order createOrder(OrderRequest request) {
+<span class="fc" id="L36">        List&lt;OrderItem&gt; items = inventoryService.reserve(request.lines());</span>
+<span class="fc" id="L37">        PriceBreakdown price = pricingService.price(items, request.customer().type());</span>
+<span class="fc" id="L38">        Order order = Order.confirm(request.customer(), request.deliveryAddress(), items, price);</span>
+<span class="fc" id="L39">        orderRepository.save(order);</span>
+<span class="fc" id="L40">        notifier.orderConfirmed(order);</span>
+<span class="fc" id="L41">        return order;</span>
+    }
+
+    @Transactional(readOnly = true)
+    public Order getOrder(Long orderId) {
+<span class="fc" id="L46">        return findOrderOrThrow(orderId);</span>
+    }
+
+    @Transactional(readOnly = true)
+    public List&lt;Order&gt; listOrders(String status) {
+<span class="fc" id="L51">        List&lt;Order&gt; orders = orderRepository.findAll();</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (Texts.isBlank(status)) {</span>
+<span class="fc" id="L53">            return orders;</span>
+        }
+<span class="fc" id="L55">        return OrderStatus.fromName(status)</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">                .map(wanted -&gt; orders.stream().filter(order -&gt; order.getStatus() == wanted).toList())</span>
+<span class="fc" id="L57">                .orElse(List.of());</span>
+    }
+
+    @Transactional
+    public Order cancelOrder(Long orderId) {
+<span class="fc" id="L62">        Order order = findOrderOrThrow(orderId);</span>
+<span class="fc" id="L63">        order.cancel();</span>
+<span class="fc" id="L64">        inventoryService.release(order);</span>
+<span class="fc" id="L65">        notifier.orderCancelled(order);</span>
+<span class="fc" id="L66">        return order;</span>
+    }
+
+    @Transactional
+    public Order deliverOrder(Long orderId) {
+<span class="fc" id="L71">        Order order = findOrderOrThrow(orderId);</span>
+<span class="fc" id="L72">        order.deliver();</span>
+<span class="fc" id="L73">        notifier.orderDelivered(order);</span>
+<span class="fc" id="L74">        return order;</span>
+    }
+
+    private Order findOrderOrThrow(Long orderId) {
+<span class="fc" id="L78">        return orderRepository.findById(orderId)</span>
+<span class="fc" id="L79">                .orElseThrow(() -&gt; new OrderNotFoundException(orderId));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>
