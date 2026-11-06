@@ -176,13 +176,13 @@ class OrderApiCharacterizationTest {
     }
 
     @Test
-    @DisplayName("C14 - Pedido rechazado por stock: stock de los items previos (comportamiento base)")
+    @DisplayName("C14 - Pedido rechazado por stock no descuenta el stock de ningun item (cambio deliberado D1)")
     void stockDeItemsPreviosEnPedidoRechazado() throws Exception {
         crearPedido("REGULAR", "null", item(1, 1), item(5, 99))
                 .andExpect(status().isBadRequest());
-        // Version base: la hamburguesa queda descontada aunque el pedido fue rechazado (20 -> 19).
+        // D1: la reserva es atomica. En la version base la hamburguesa quedaba descontada (20 -> 19).
         mvc.perform(get("/api/products"))
-                .andExpect(jsonPath("$[0].stock").value(19));
+                .andExpect(jsonPath("$[0].stock").value(20));
     }
 
     // ---------------------------------------------------------------- notificaciones
@@ -242,10 +242,10 @@ class OrderApiCharacterizationTest {
     }
 
     @Test
-    @DisplayName("C20 - Cancelar un pedido inexistente es rechazado")
+    @DisplayName("C20 - Cancelar un pedido inexistente responde 404 (cambio deliberado D2)")
     void cancelarInexistente() throws Exception {
         mvc.perform(post("/api/orders/99/cancel"))
-                .andExpect(status().isBadRequest())
+                .andExpect(status().isNotFound())
                 .andExpect(content().string("Pedido no encontrado: 99"));
     }
 
@@ -263,11 +263,12 @@ class OrderApiCharacterizationTest {
     }
 
     @Test
-    @DisplayName("C22 - Consultar un pedido inexistente (comportamiento base: 200 sin cuerpo)")
+    @DisplayName("C22 - Consultar un pedido inexistente responde 404 con mensaje (cambio deliberado D2)")
     void consultarInexistente() throws Exception {
+        // D2: en la version base respondia 200 con cuerpo vacio.
         mvc.perform(get("/api/orders/99"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(""));
+                .andExpect(status().isNotFound())
+                .andExpect(content().string("Pedido no encontrado: 99"));
     }
 
     @Test

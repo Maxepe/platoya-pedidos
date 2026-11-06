@@ -1,7 +1,13 @@
 package com.platoya.pedidos.controller;
 
+import com.platoya.pedidos.model.CustomerInfo;
+import com.platoya.pedidos.model.DeliveryAddress;
+import com.platoya.pedidos.service.OrderLineRequest;
+import com.platoya.pedidos.service.OrderRequest;
+
 import java.util.List;
 
+/** Cuerpo JSON de POST /api/orders. Se mantiene plano para no romper el contrato de la API. */
 public class OrderRequestDto {
 
     private String customerName;
@@ -22,6 +28,21 @@ public class OrderRequestDto {
 
         public int getQuantity() { return quantity; }
         public void setQuantity(int quantity) { this.quantity = quantity; }
+    }
+
+    public OrderRequest toOrderRequest() {
+        CustomerInfo customer = new CustomerInfo(customerName, customerEmail, customerPhone, customerType);
+        DeliveryAddress deliveryAddress = new DeliveryAddress(street, city, zipCode);
+        return new OrderRequest(customer, deliveryAddress, toLines());
+    }
+
+    private List<OrderLineRequest> toLines() {
+        if (items == null) {
+            return List.of();
+        }
+        return items.stream()
+                .map(item -> item == null ? null : new OrderLineRequest(item.getProductId(), item.getQuantity()))
+                .toList();
     }
 
     public String getCustomerName() { return customerName; }

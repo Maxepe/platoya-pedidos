@@ -1,7 +1,11 @@
 package com.platoya.pedidos.model;
 
+import com.platoya.pedidos.exception.BusinessRuleException;
+import com.platoya.pedidos.support.Texts;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -39,54 +43,75 @@ public class Order {
     private double tax;
     private double shippingCost;
     private double total;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
     private LocalDateTime createdAt;
 
+    protected Order() {
+    }
+
+    // CR-06: 15 asignaciones sin logica; partirlo no mejora la legibilidad.
+    @SuppressWarnings("checkstyle:MethodLength")
+    public static Order confirm(CustomerInfo customer, DeliveryAddress address,
+                                List<OrderItem> items, PriceBreakdown price) {
+        Order order = new Order();
+        order.customerName = customer.name();
+        order.customerEmail = customer.email();
+        order.customerPhone = customer.phone();
+        order.customerType = customer.type();
+        order.street = address.street();
+        order.city = address.city();
+        order.zipCode = address.zipCode();
+        order.items = new ArrayList<>(items);
+        order.subtotal = price.subtotal();
+        order.discount = price.discount();
+        order.tax = price.tax();
+        order.shippingCost = price.shippingCost();
+        order.total = price.total();
+        order.status = OrderStatus.CONFIRMADO;
+        order.createdAt = LocalDateTime.now();
+        return order;
+    }
+
+    public void cancel() {
+        requireConfirmed("Solo se pueden cancelar pedidos confirmados");
+        status = OrderStatus.CANCELADO;
+    }
+
+    public void deliver() {
+        requireConfirmed("Solo se pueden entregar pedidos confirmados");
+        status = OrderStatus.ENTREGADO;
+    }
+
+    public boolean isBilled() {
+        return status == OrderStatus.CONFIRMADO || status == OrderStatus.ENTREGADO;
+    }
+
+    public boolean hasCustomerPhone() {
+        return !Texts.isBlank(customerPhone);
+    }
+
+    private void requireConfirmed(String message) {
+        if (status != OrderStatus.CONFIRMADO) {
+            throw new BusinessRuleException(message);
+        }
+    }
+
     public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
     public String getCustomerName() { return customerName; }
-    public void setCustomerName(String customerName) { this.customerName = customerName; }
-
     public String getCustomerEmail() { return customerEmail; }
-    public void setCustomerEmail(String customerEmail) { this.customerEmail = customerEmail; }
-
     public String getCustomerPhone() { return customerPhone; }
-    public void setCustomerPhone(String customerPhone) { this.customerPhone = customerPhone; }
-
     public String getCustomerType() { return customerType; }
-    public void setCustomerType(String customerType) { this.customerType = customerType; }
-
     public String getStreet() { return street; }
-    public void setStreet(String street) { this.street = street; }
-
     public String getCity() { return city; }
-    public void setCity(String city) { this.city = city; }
-
     public String getZipCode() { return zipCode; }
-    public void setZipCode(String zipCode) { this.zipCode = zipCode; }
-
     public List<OrderItem> getItems() { return items; }
-    public void setItems(List<OrderItem> items) { this.items = items; }
-
     public double getSubtotal() { return subtotal; }
-    public void setSubtotal(double subtotal) { this.subtotal = subtotal; }
-
     public double getDiscount() { return discount; }
-    public void setDiscount(double discount) { this.discount = discount; }
-
     public double getTax() { return tax; }
-    public void setTax(double tax) { this.tax = tax; }
-
     public double getShippingCost() { return shippingCost; }
-    public void setShippingCost(double shippingCost) { this.shippingCost = shippingCost; }
-
     public double getTotal() { return total; }
-    public void setTotal(double total) { this.total = total; }
-
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
-
+    public OrderStatus getStatus() { return status; }
     public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 }
